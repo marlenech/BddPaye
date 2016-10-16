@@ -83,15 +83,16 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_plafonds) {
+
+
+        } else if (id == R.id.nav_smic) {
+
+        } else if (id == R.id.nav_urssaf) {
             UrssafFragment fragment = new UrssafFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-
-        } else if (id == R.id.nav_smic) {
-
-        } else if (id == R.id.nav_urssaf) {
 
         } else if (id == R.id.nav_polemploi) {
 
