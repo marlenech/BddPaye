@@ -1,25 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+    <item android:title="Données principales">
 
+    <menu android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_plafonds"
+            android:icon="@drawable/ic_menu_plafonds"
+            android:title="Plafonds" />
+        <item
+            android:id="@+id/nav_smic"
+            android:icon="@drawable/ic_menu_smic"
+            android:title="Smic" />
+        <item
+            android:id="@+id/nav_urssaf"
+            android:icon="@drawable/ic_menu_urssaf"
+            android:title="Urssaf" />
+        <item
+            android:id="@+id/nav_polemploi"
+            android:icon="@drawable/ic_menu_polemploi"
+            android:title="Pôle Emploi" />
+        <item
+            android:id="@+id/nav_retraites"
+            android:icon="@drawable/ic_menu_retraites"
+            android:title="Retraites" />
+        <item
+            android:id="@+id/nav_csg"
+            android:icon="@drawable/ic_menu_csg"
+            android:title="CSG/CRDS" />
+        <item
+            android:id="@+id/nav_allegements"
+            android:icon="@drawable/ic_menu_allegements"
+            android:title="Allègements" />
+        <item
+            android:id="@+id/nav_reintegrations"
+            android:icon="@drawable/ic_menu_reintegrations"
+            android:title="Réintégrations" />
+        <item
+            android:id="@+id/nav_contrats"
+            android:icon="@drawable/ic_menu_contrats"
+            android:title="Contrats" />
+        <item
+            android:id="@+id/nav_patronales"
+            android:icon="@drawable/ic_menu_patronales"
+            android:title="Patronales" />
+        <item
+            android:id="@+id/nav_saisie"
+            android:icon="@drawable/ic_menu_saisie"
+            android:title="Saisie Arrêt" />
+        <item
+            android:id="@+id/nav_msa"
+            android:icon="@drawable/ic_menu_msa"
+            android:title="MSA" />
+    </menu>
+
+    </item>
     <item android:title="Communicate">
         <menu>
             <item

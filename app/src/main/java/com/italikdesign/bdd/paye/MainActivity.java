@@ -82,18 +82,34 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_plafonds) {
             UrssafFragment fragment = new UrssafFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_smic) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_urssaf) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_polemploi) {
+
+        } else if (id == R.id.nav_retraites) {
+
+        } else if (id == R.id.nav_csg) {
+
+        } else if (id == R.id.nav_allegements) {
+
+        } else if (id == R.id.nav_reintegrations) {
+
+        } else if (id == R.id.nav_contrats) {
+
+        } else if (id == R.id.nav_patronales) {
+
+        } else if (id == R.id.nav_saisie) {
+
+        } else if (id == R.id.nav_msa) {
 
         } else if (id == R.id.nav_share) {
 
