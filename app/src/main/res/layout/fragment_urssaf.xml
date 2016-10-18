@@ -46,12 +46,10 @@
         android:layout_marginBottom="40dp">
 
 
-        <TextView
-            android:id="@+id/none1"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <TextView
             android:id="@+id/psurssaf"
             android:layout_width="wrap_content"
@@ -110,6 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="0,35"/>
         <EditText
             android:id="@+id/ppvieillesse"
@@ -117,6 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="1,85"/>
         <TextView
             android:id="@+id/vieillesse_plafonnee"
@@ -134,6 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="6,90"/>
         <EditText
             android:id="@+id/ppvieillessep"
@@ -141,6 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="8,55"/>
         <TextView
             android:id="@+id/contribution_solidarite"
@@ -151,18 +153,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Contribution Solidarité"/>
-        <TextView
-            android:id="@+id/none2"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppcontribution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="0,30"/>
         <TextView
             android:id="@+id/fnalPlaf"
@@ -173,18 +174,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Fnal Plafonné"/>
-        <TextView
-            android:id="@+id/none3"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppfnalp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="0,10"/>
         <TextView
             android:id="@+id/allocfam"
@@ -195,18 +195,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Allocations Familiales"/>
-        <TextView
-            android:id="@+id/none4"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppallocfam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="3,45"/>
         <TextView
             android:id="@+id/allocfamcomp"
@@ -217,18 +216,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Allocations Familiales Comp"/>
-        <TextView
-            android:id="@+id/none5"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppallocfamcomp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="1,80"/>
         <TextView
             android:id="@+id/forfaitsocial"
@@ -239,18 +237,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Forfait Social"/>
-        <TextView
-            android:id="@+id/none6"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppforfaitsoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="8,00"/>
         <TextView
             android:id="@+id/forfaitsocialplein"
@@ -261,18 +258,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Forfait Social Plein"/>
-        <TextView
-            android:id="@+id/none7"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppforfaitsocpl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="20,00"/>
         <TextView
             android:id="@+id/forfaitsocial50"
@@ -283,18 +279,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Forfait Social -50"/>
-        <TextView
-            android:id="@+id/none8"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppforfaitsoc50"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="8,00"/>
         <TextView
             android:id="@+id/forfaitsocialreduit"
@@ -305,18 +300,17 @@
             android:textSize="14.0sp"
             android:textStyle="bold"
             android:text="Forfait Social Réduit"/>
-        <TextView
-            android:id="@+id/none9"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_columnSpan="1" />
+            />
         <EditText
             android:id="@+id/ppforfaitsocred"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColorHint="@color/colorDonnee"
+            android:inputType="number"
             android:hint="16,00" />
 
 
