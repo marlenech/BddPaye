@@ -1,5 +1,7 @@
 package com.italikdesign.bdd.paye;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity
 
     Toolbar toolbar = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        isOnline(this);
+
+
     }
 
     @Override
@@ -74,6 +81,17 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Test connection
+
+    public boolean isOnline(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        android.net.NetworkInfo networkinfo = cm.getActiveNetworkInfo();
+        if (networkinfo != null && networkinfo.isConnected()) {
+            return true;
+        }
+        return false;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
