@@ -30,7 +30,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -46,7 +50,7 @@ public class UrssafFragment extends Fragment {
         TextView txone, txtwo;
 
 
-        String id, pid, nvtaux, nvtaux2;
+        String id, id2, pid, nvtaux, nvtaux2, actaux, actaux2, date1, date2;
 
 
         // Creating JSON Parser object
@@ -60,8 +64,17 @@ public class UrssafFragment extends Fragment {
         private static final String TAG_PRODUCTS = "tauxx";
         private static final String TAG_PID = "pid";
         private static final String TAG_NVTAUX = "nvtaux";
+        private static final String TAG_ANCIENTAUX = "ancientaux";
+        private static final String TAG_DATE = "date";
 
-        // products JSONArray
+
+
+        SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+        Date today = Calendar.getInstance().getTime();
+
+        String reportDate = form.format(today);
+
+        // JSONArray et JSONObject
         JSONArray tauxx = null;
         JSONObject objet = null;
         JSONObject objet1 = null;
@@ -92,26 +105,48 @@ public class UrssafFragment extends Fragment {
                 // Loading products in Background Thread
                 new LoadAllProducts().execute();
 
+                View.OnClickListener listener = new View.OnClickListener() {
 
-                // on seleting single product
-                // launching Edit Product Screen
-                txone.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                        public void onClick(View v) {
 
-                        // getting values from selected ListItem
+                                switch (v.getId()) {
+                                        case R.id.psmaladie:
 
-                                // Starting new intent
-                                Intent in = new Intent(getActivity().getApplicationContext(),
-                                        EditData.class);
-                                // sending pid to next activity
-                                in.putExtra(TAG_PID, id);
+                                                // getting values from selected ListItem
 
-                                // starting new activity and expecting some response back
-                                startActivityForResult(in, 100);
+                                                // Starting new intent
+                                                Intent in = new Intent(getActivity().getApplicationContext(),
+                                                        EditData.class);
+                                                // sending pid to next activity
+                                                in.putExtra(TAG_PID, id);
+
+
+                                                // starting new activity and expecting some response back
+                                                startActivityForResult(in, 100);
+
+                                                break;
+                                        case R.id.ppmaladie:
+
+                                                // getting values from selected ListItem
+
+                                                // Starting new intent
+                                                Intent in2 = new Intent(getActivity().getApplicationContext(),
+                                                        EditData.class);
+                                                // sending pid to next activity
+                                                in2.putExtra(TAG_PID, id2);
+
+
+                                                // starting new activity and expecting some response back
+                                                startActivityForResult(in2, 100);
+
+                                                break;
+
+                                }
                         }
-                });
+                };
 
+                        txone.setOnClickListener(listener);
+                        txtwo.setOnClickListener(listener);
 
                 return rootView;
         }
@@ -144,7 +179,7 @@ public class UrssafFragment extends Fragment {
                 protected void onPreExecute() {
                         super.onPreExecute();
                         pDialog = new ProgressDialog(getActivity());
-                        pDialog.setMessage("Loading products. Please wait...");
+                        pDialog.setMessage("Chargement des données...");
                         pDialog.setIndeterminate(false);
                         pDialog.setCancelable(false);
                         pDialog.show();
@@ -154,45 +189,49 @@ public class UrssafFragment extends Fragment {
                  * getting All products from url
                  * */
                 protected String doInBackground(String... args) {
-                        // Building Parameters
+                        // Je construis mon array
                         List<NameValuePair> params = new ArrayList<NameValuePair>();
-                        // getting JSON string from URL
+                        // je convertis mes données en json via mon URL
                         JSONObject json =    jParser.makeHttpRequest(getResources().getString(R.string.all_products), "GET", params);
 
-                        // Check your log cat for JSON reponse
-                        Log.d("All Products: ", json.toString());
+                        // log cat du JSON reponse
+                        Log.d("Les données: ", json.toString());
 
                         try {
-                                // Checking for SUCCESS TAG
+                                // Je vérifie le SUCCESS TAG
                                 int success = json.getInt(TAG_SUCCESS);
 
                                 if (success == 1) {
-                                        // products found
-                                        // Getting Array of Products
+                                        // les données ont été trouvées
+                                        // j'inclus l'ensemble de ces données dans un array (TAG_PRODUCTS)
                                         tauxx = json.getJSONArray(TAG_PRODUCTS);
 
-                                        // looping through All Products
+                                        // Boucle sur l'ensemble des lignes de la table
                                         for (int i = 0; i < tauxx.length(); i++) {
                                                 JSONObject c = tauxx.getJSONObject(i);
 
-                                                // Storing each json item in variable
-                                                objet = tauxx.getJSONObject(1);
-                                                objet1 = tauxx.getJSONObject(0);
+                                                // j'affecte une variable à chaque ligne
+                                                objet = tauxx.getJSONObject(0);
+                                                objet1 = tauxx.getJSONObject(1);
 
-                                                // Storing each json item in variable
-                                                id = c.getString(TAG_PID);
+                                                // je récupère les données de chaque ligne liée à chaque variable définie au dessus
+                                                id = objet.getString(TAG_PID);
+                                                id2 = objet1.getString(TAG_PID);
+                                                actaux = objet.getString(TAG_ANCIENTAUX);
+                                                actaux2 = objet1.getString(TAG_ANCIENTAUX);
                                                 nvtaux = objet.getString(TAG_NVTAUX);
                                                 nvtaux2 = objet1.getString(TAG_NVTAUX);
+                                                date1 = objet.getString(TAG_DATE);
+                                                date2 = objet1.getString(TAG_DATE);
 
-
-                                                // creating new HashMap
+                                                // créer un nouvel HashMap
                                                 HashMap<String, String> map = new HashMap<String, String>();
 
 
                                         }
                                 } else {
-                                        // no products found
-                                        // Launch Add New product Activity
+                                        // Rien est trouvé
+
 
                                 }
                         } catch (JSONException e) {
@@ -211,15 +250,21 @@ public class UrssafFragment extends Fragment {
                         pDialog.dismiss();
 
 
-                        // updating UI from Background Thread
+                        // j'affiche le résultat de la tâche effectuée en arrière plan
                         getActivity().runOnUiThread(new Runnable() {
                                 public void run() {
                                     /**
-                                     * Updating parsed JSON data into ListView
+                                     * Je compare la date de validité (database)
+                                     * avec la date du jour;
+                                     * J'affiche les taux en fonction des résultats
                                      * */
 
-
+                                        if (reportDate.compareTo(date1) <= 0) {
+                                                txone.setText(actaux);
+                                        }
+                                        else {
                                                 txone.setText(nvtaux);
+                                        }
                                                 txtwo.setText(nvtaux2);
 
 
