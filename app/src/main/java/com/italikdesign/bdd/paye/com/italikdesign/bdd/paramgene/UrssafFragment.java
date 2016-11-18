@@ -125,7 +125,7 @@ public class UrssafFragment extends Fragment {
                                                 // Starting new intent
                                                 Intent in = new Intent(getActivity().getApplicationContext(),
                                                         EditData.class);
-                                                // sending pid to next activity
+                                                // je récupère le PID de la donnée cliquée
                                                 in.putExtra(TAG_PID, id_psm);
 
 
