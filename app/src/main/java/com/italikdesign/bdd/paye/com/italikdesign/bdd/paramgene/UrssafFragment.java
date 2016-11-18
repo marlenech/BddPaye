@@ -46,7 +46,8 @@ public class UrssafFragment extends Fragment {
         TextView txone, txtwo;
 
 
-        String id, id2, nvtaux, nvtaux2;
+        String id, pid, nvtaux, nvtaux2;
+
 
         // Creating JSON Parser object
         JSONParser jParser = new JSONParser();
@@ -87,6 +88,7 @@ public class UrssafFragment extends Fragment {
 
 
 
+
                 // Loading products in Background Thread
                 new LoadAllProducts().execute();
 
@@ -98,14 +100,12 @@ public class UrssafFragment extends Fragment {
                     public void onClick(View v) {
 
                         // getting values from selected ListItem
-                                String pid = ((TextView) rootView.findViewById(R.id.pid)).getText()
-                                        .toString();
 
                                 // Starting new intent
                                 Intent in = new Intent(getActivity().getApplicationContext(),
                                         EditData.class);
                                 // sending pid to next activity
-                                in.putExtra(TAG_PID, pid);
+                                in.putExtra(TAG_PID, id);
 
                                 // starting new activity and expecting some response back
                                 startActivityForResult(in, 100);
