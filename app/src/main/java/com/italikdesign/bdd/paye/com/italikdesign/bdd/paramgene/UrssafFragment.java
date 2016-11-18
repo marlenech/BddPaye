@@ -2,6 +2,7 @@ package com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene;
 
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,16 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 
-import com.italikdesign.bdd.paye.MainActivity;
 import com.italikdesign.bdd.paye.R;
 import com.italikdesign.bdd.paye.mysql.Downloader;
 import com.italikdesign.bdd.paye.mysql.JSONParser;
@@ -37,10 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.italikdesign.bdd.paye.R.id.inputAncienTaux;
-import static com.italikdesign.bdd.paye.R.id.inputDate;
-import static com.italikdesign.bdd.paye.R.id.inputName;
-import static com.italikdesign.bdd.paye.R.id.inputNewTaux;
+
 
 
 public class UrssafFragment extends Fragment {
@@ -49,10 +43,10 @@ public class UrssafFragment extends Fragment {
         private ProgressDialog pDialog;
 
         View rootView;
-        GridView grid;
+        TextView txone, txtwo;
 
 
-
+        String id, id2, nvtaux, nvtaux2;
 
         // Creating JSON Parser object
         JSONParser jParser = new JSONParser();
@@ -68,6 +62,8 @@ public class UrssafFragment extends Fragment {
 
         // products JSONArray
         JSONArray tauxx = null;
+        JSONObject objet = null;
+        JSONObject objet1 = null;
 
 
 
@@ -86,7 +82,10 @@ public class UrssafFragment extends Fragment {
                 // Hashmap for ListView
                 tauxxList = new ArrayList<HashMap<String, String>>();
 
-                grid = (GridView) rootView.findViewById(R.id.grid);
+                txone = (TextView) rootView.findViewById(R.id.psmaladie);
+                txtwo = (TextView) rootView.findViewById(R.id.ppmaladie);
+
+
 
                 // Loading products in Background Thread
                 new LoadAllProducts().execute();
@@ -94,12 +93,11 @@ public class UrssafFragment extends Fragment {
 
                 // on seleting single product
                 // launching Edit Product Screen
-                grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                txone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view,
-                                                int position, long id) {
-                                // getting values from selected ListItem
+                        // getting values from selected ListItem
                                 String pid = ((TextView) rootView.findViewById(R.id.pid)).getText()
                                         .toString();
 
@@ -159,7 +157,7 @@ public class UrssafFragment extends Fragment {
                         // Building Parameters
                         List<NameValuePair> params = new ArrayList<NameValuePair>();
                         // getting JSON string from URL
-                        JSONObject json = jParser.makeHttpRequest(getResources().getString(R.string.all_products), "GET", params);
+                        JSONObject json =    jParser.makeHttpRequest(getResources().getString(R.string.all_products), "GET", params);
 
                         // Check your log cat for JSON reponse
                         Log.d("All Products: ", json.toString());
@@ -178,18 +176,19 @@ public class UrssafFragment extends Fragment {
                                                 JSONObject c = tauxx.getJSONObject(i);
 
                                                 // Storing each json item in variable
-                                                String id = c.getString(TAG_PID);
-                                                String nvtaux = c.getString(TAG_NVTAUX);
+                                                objet = tauxx.getJSONObject(1);
+                                                objet1 = tauxx.getJSONObject(0);
+
+                                                // Storing each json item in variable
+                                                id = c.getString(TAG_PID);
+                                                nvtaux = objet.getString(TAG_NVTAUX);
+                                                nvtaux2 = objet1.getString(TAG_NVTAUX);
+
 
                                                 // creating new HashMap
                                                 HashMap<String, String> map = new HashMap<String, String>();
 
-                                                // adding each child node to HashMap key => value
-                                                map.put(TAG_PID, id);
-                                                map.put(TAG_NVTAUX, nvtaux);
 
-                                                // adding HashList to ArrayList
-                                                tauxxList.add(map);
                                         }
                                 } else {
                                         // no products found
@@ -203,6 +202,7 @@ public class UrssafFragment extends Fragment {
                         return null;
                 }
 
+
                 /**
                  * After completing background task Dismiss the progress dialog
                  * **/
@@ -214,17 +214,16 @@ public class UrssafFragment extends Fragment {
                         // updating UI from Background Thread
                         getActivity().runOnUiThread(new Runnable() {
                                 public void run() {
-                                        /**
-                                         * Updating parsed JSON data into ListView
-                                         * */
+                                    /**
+                                     * Updating parsed JSON data into ListView
+                                     * */
 
-                                                ListAdapter adapter = new SimpleAdapter(
-                                                        getActivity(), tauxxList,
-                                                        R.layout.list_item, new String[]{TAG_NVTAUX, TAG_NVTAUX},
-                                                        new int[]{R.id.psmaladie, R.id.psvieillesse});
 
-                                        // updating listview
-                                        grid.setAdapter(adapter);
+                                                txone.setText(nvtaux);
+                                                txtwo.setText(nvtaux2);
+
+
+
                                 }
                         });
 

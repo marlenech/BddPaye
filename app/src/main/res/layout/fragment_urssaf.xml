@@ -35,7 +35,7 @@
                 android:id="@+id/urssaf" />
 
 
-            <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/grid"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -46,10 +46,252 @@
                 android:layout_marginBottom="40dp">
 
 
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/pid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/psurssaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="PS (%)"/>
+                <TextView
+                    android:id="@+id/ppurssaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="PP (%)"/>
+                <TextView
+                    android:id="@+id/maladie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Maladie"/>
+                <TextView
+                    android:id="@+id/psmaladie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/ppmaladie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/vieillesse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Vieillesse"/>
+                <TextView
+                    android:id="@+id/psvieillesse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/ppvieillesse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/vieillesse_plafonnee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Vieillesse Plafonnée"/>
+                <TextView
+                    android:id="@+id/psvieillessep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/ppvieillessep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/contribution_solidarite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Contribution Solidarité"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppcontribution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/fnalPlaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Fnal Plafonné"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppfnalp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/allocfam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Allocations Familiales"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppallocfam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/allocfamcomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Allocations Familiales Comp"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppallocfamcomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/forfaitsocial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Forfait Social"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppforfaitsoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/forfaitsocialplein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Forfait Social Plein"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppforfaitsocpl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/forfaitsocial50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Forfait Social -50"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppforfaitsoc50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/forfaitsocialreduit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Forfait Social Réduit"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/ppforfaitsocred"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                     />
 
 
-
-            </GridView>
+            </GridLayout>
 
 
             <Button
