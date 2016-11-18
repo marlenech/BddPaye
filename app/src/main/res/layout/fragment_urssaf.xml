@@ -46,10 +46,7 @@
                 android:layout_marginBottom="40dp">
 
 
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
+
                 <TextView
                     android:id="@+id/pid"
                     android:layout_width="wrap_content"
@@ -80,18 +77,28 @@
                     android:layout_gravity="left|center_vertical"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="8dp"
                     android:text="Maladie"/>
                 <TextView
                     android:id="@+id/psmaladie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
                     android:layout_gravity="center"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="8dp"
                     />
                 <TextView
                     android:id="@+id/ppmaladie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
                     android:layout_gravity="center"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="8dp"
                     />
                 <TextView
                     android:id="@+id/vieillesse"
@@ -100,6 +107,7 @@
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
                     android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Vieillesse"/>
@@ -108,12 +116,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/ppvieillesse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/vieillesse_plafonnee"
@@ -122,6 +136,7 @@
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
                     android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Vieillesse Plafonnée"/>
@@ -130,12 +145,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/ppvieillessep"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/contribution_solidarite"
@@ -143,6 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Contribution Solidarité"/>
@@ -155,6 +177,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/fnalPlaf"
@@ -162,6 +187,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Fnal Plafonné"/>
@@ -174,6 +200,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/allocfam"
@@ -181,6 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Allocations Familiales"/>
@@ -193,6 +223,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/allocfamcomp"
@@ -200,6 +233,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Allocations Familiales Comp"/>
@@ -212,6 +246,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/forfaitsocial"
@@ -219,6 +256,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Forfait Social"/>
@@ -231,6 +269,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/forfaitsocialplein"
@@ -238,6 +279,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Forfait Social Plein"/>
@@ -250,6 +292,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/forfaitsocial50"
@@ -257,6 +302,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Forfait Social -50"/>
@@ -269,6 +315,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                     />
                 <TextView
                     android:id="@+id/forfaitsocialreduit"
@@ -276,6 +325,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnSpan="1"
                     android:layout_gravity="left|center_vertical"
+                    android:paddingBottom="15dp"
                     android:textSize="14.0sp"
                     android:textStyle="bold"
                     android:text="Forfait Social Réduit"/>
@@ -288,19 +338,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
                      />
 
 
             </GridLayout>
 
 
-            <Button
-                android:id="@+id/miseajour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:paddingBottom="10dp"
-                android:text="Mettre à jour"/>
+
 
         </RelativeLayout></ScrollView></android.support.v7.widget.CardView>
