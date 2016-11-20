@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.PlafondFragment;
 import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.UrssafFragment;
 
 import static com.italikdesign.bdd.paye.R.id.toolbar;
@@ -101,6 +102,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_plafonds) {
+            PlafondFragment fragment = new PlafondFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
 
         } else if (id == R.id.nav_smic) {

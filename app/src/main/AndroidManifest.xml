@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/AppCompatAlertDialogStyle"
             android:name=".com.italikdesign.bdd.paramgene.EditData">
         </activity>
     </application>

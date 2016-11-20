@@ -360,9 +360,7 @@ public class UrssafFragment extends Fragment {
                         // if result code 100 is received
                         // means user edited/deleted product
                         // reload this screen again
-                        Intent intent = getActivity().getIntent();
-                        getActivity().finish();
-                        startActivity(intent);
+
                 }
 
         }

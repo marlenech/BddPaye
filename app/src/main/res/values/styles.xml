@@ -25,5 +25,8 @@
         <item name="windowActionBar">true</item>
 
     </style>
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+    </style>
 
 </resources>
