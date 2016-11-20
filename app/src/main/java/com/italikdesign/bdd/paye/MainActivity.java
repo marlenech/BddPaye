@@ -15,7 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.CsgFragment;
 import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.PlafondFragment;
+import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.PolemploiFragment;
+import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.SmicFragment;
 import com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.UrssafFragment;
 
 import static com.italikdesign.bdd.paye.R.id.toolbar;
@@ -110,6 +113,11 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_smic) {
+            SmicFragment fragment = new SmicFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_urssaf) {
             UrssafFragment fragment = new UrssafFragment();
@@ -119,10 +127,20 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_polemploi) {
+            PolemploiFragment fragment = new PolemploiFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_retraites) {
 
         } else if (id == R.id.nav_csg) {
+            CsgFragment fragment = new CsgFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_allegements) {
 

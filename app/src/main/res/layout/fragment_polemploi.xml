@@ -1,0 +1,225 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="65dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false"
+    app:contentPadding="0dp"
+    tools:context="com.italikdesign.bdd.paye.com.italikdesign.bdd.paramgene.PolemploiFragment">
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="POLE EMPLOI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTitre"
+                android:id="@+id/polemploi" />
+
+
+            <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/grid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignBounds"
+                android:layout_marginTop="40dp"
+                android:columnCount="3"
+                android:padding="10dp"
+                android:layout_marginBottom="40dp">
+
+
+
+                <TextView
+                    android:id="@+id/pid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"/>
+                <TextView
+                    android:id="@+id/ps_ppolemploi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="PS (%)"/>
+                <TextView
+                    android:id="@+id/pp_polemploi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="PP (%)"/>
+                <TextView
+                    android:id="@+id/ps_chomage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="8dp"
+                    android:text="Chômage"/>
+                <TextView
+                    android:id="@+id/pschom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:layout_gravity="center"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="8dp"
+                    />
+                <TextView
+                    android:id="@+id/ppchom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:layout_gravity="center"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="8dp"
+                    />
+                <TextView
+                    android:id="@+id/accroissement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="25dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTitre"
+                    android:text="CDD Accroissement"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/maj_cdd1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Majoration CDD moins 1 mois"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/mcdd1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/maj_cdd3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Majoration CDD moins 3 mois"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/mcdd3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
+                    />
+                <TextView
+                    android:id="@+id/cdd_usage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="15dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTitre"
+                    android:text="CDD d'usage"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/maj_usage_cdd3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold"
+                    android:text="Majoration CDD moins 3 mois"/>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/mcddu3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18.0sp"
+                    android:textColor="@color/colorDonnee"
+                    android:paddingBottom="15dp"
+                    />
+
+
+            </GridLayout>
+
+
+
+
+        </RelativeLayout></ScrollView></android.support.v7.widget.CardView>
